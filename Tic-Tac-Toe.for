@@ -18,10 +18,10 @@
 	write(*,*) 'Give i,l for k(i,l)'
 	write(*,15) 
    15	format('i=',$)
-      read(*,*) n
+        read(*,*) n
 	write(*,16)
    16	format('l=',$)
-      read(*,*) m
+        read(*,*) m
 	write(*,*)
 	write(*,*)
 	k(n,m)=0
@@ -38,16 +38,16 @@
 	b=2
 	goto 10
 	endif
-      if(b==1) then
+        if(b==1) then
 	do 8 i=1,3
 	if(k(i,1)==1.and.k(i,2)==1.and.k(i,3)==9) then 
 	k(i,3)=1
-      b=3
+        b=3
 	goto 1
 	endif
 	if(k(i,1)==1.and.k(i,3)==1.and.k(i,2)==9)then
 	k(i,2)=1
-      b=3
+        b=3
 	goto 1
 	endif
 	if(k(i,2)==1.and.k(i,3)==1.and.k(i,1)==9)then
@@ -87,33 +87,33 @@
 	endif
 	if(k(1,3)==1.and.k(2,2)==1.and.k(3,1)==9)then 
 	k(3,1)=1
-      b=3
+        b=3
 	goto 1
 	endif
 	if(k(1,3)==1.and.k(3,1)==1.and.k(2,2)==9)then 
 	k(2,2)=1
-      b=3
+        b=3
 	goto 1
 	endif
 	if(k(2,2)==1.and.k(3,1)==1.and.k(1,3)==9)then 
 	k(1,3)=1
-      b=3
+        b=3
 	goto 1
 	endif
     8	enddo
-      endif
+        endif
 
       
-    1 if(b==1)then
+    1   if(b==1)then
 	do 2 i=1,3
 	if(k(i,1)==0.and.k(i,2)==0.and.k(i,3)==9) then 
 	k(i,3)=1
-      b=0
+        b=0
 	goto 10
 	endif
 	if(k(i,1)==0.and.k(i,3)==0.and.k(i,2)==9)then
 	k(i,2)=1
-      b=0
+        b=0
 	goto 10
 	endif
 	if(k(i,2)==0.and.k(i,3)==0.and.k(i,1)==9)then
@@ -153,36 +153,36 @@
 	endif
 	if(k(1,3)==0.and.k(2,2)==0.and.k(3,1)==9)then 
 	k(3,1)=1
-      b=0
+        b=0
 	goto 10
 	endif
 	if(k(1,3)==0.and.k(3,1)==0.and.k(2,2)==9)then 
 	k(2,2)=1
-      b=0
+        b=0
 	goto 10
 	endif
 	if(k(2,2)==0.and.k(3,1)==0.and.k(1,3)==9)then 
 	k(1,3)=1
-      b=0
+        b=0
 	goto 10
 	endif
     2	enddo
-      endif
+        endif
 
 
-      if(b==1) then
+        if(b==1) then
 	do 9 i=1,3
 	do 9 l=1,3
-      a=abs(l-4)
+        a=abs(l-4)
 	if(k(i,a)==9)then
 	k(i,a)=1
 	goto 10
 	endif
     9	enddo
-      endif
-   10 b=1
-      call characterr()
-      write(*,*) '                 ','The array is'
+        endif
+   10   b=1
+        call characterr()
+        write(*,*) '                 ','The array is'
 	write(*,*)
 	write(*,*)'             1.','         2.','        3.'
 	write(*,*)
@@ -192,49 +192,49 @@
 	write(*,*)
     4	enddo
 
-      do 12 i=1,3
-      if(k(i,1)==k(i,2).and.k(i,2)==k(i,3).and.k(i,3)==0) then
-      write(*,*) 'You won!'
+        do 12 i=1,3
+        if(k(i,1)==k(i,2).and.k(i,2)==k(i,3).and.k(i,3)==0) then
+        write(*,*) 'You won!'
 	goto 13
 	endif
 	if(k(1,i)==k(2,i).and.k(2,i)==k(3,i).and.k(3,i)==0)then
-      write(*,*) 'You won!'
+        write(*,*) 'You won!'
 	goto 13
 	endif
 	if(k(1,1)==k(2,2).and.k(2,2)==k(3,3).and.k(3,3)==0)then
-      write(*,*) 'You won!'
+        write(*,*) 'You won!'
 	goto 13
 	endif
 	if(k(1,3)==k(2,2).and.k(2,2)==k(3,1).and.k(3,1)==0)then
-      write(*,*) 'You won!'
+        write(*,*) 'You won!'
 	goto 13
 	endif
    12	enddo
 
-      do 14 i=1,3
-      if(k(i,1)==k(i,2).and.k(i,2)==k(i,3).and.k(i,3)==1) then
-      write(*,*) 'I won!'
+        do 14 i=1,3
+        if(k(i,1)==k(i,2).and.k(i,2)==k(i,3).and.k(i,3)==1) then
+        write(*,*) 'I won!'
 	goto 13
 	endif
 	if(k(1,i)==k(2,i).and.k(2,i)==k(3,i).and.k(3,i)==1)then
-      write(*,*) 'I won!'
+        write(*,*) 'I won!'
 	goto 13
 	endif
 	if(k(1,1)==k(2,2).and.k(2,2)==k(3,3).and.k(3,3)==1)then
-      write(*,*) 'I won!'
+        write(*,*) 'I won!'
 	goto 13
 	endif
 	if(k(1,3)==k(2,2).and.k(2,2)==k(3,1).and.k(3,1)==1)then
-      write(*,*) 'I won!'
+        write(*,*) 'I won!'
 	goto 13
 	endif
    14	enddo
 
-    5 enddo
-   13 write(*,*)
-      read(*,*) i 
+    5   enddo
+   13   write(*,*)
+        read(*,*) i 
 
-      end
+        end
 
 	subroutine characterr()
 	implicit none
@@ -246,6 +246,6 @@
 	if(k(i,l)==0)kk(i,l)='O'
 	if(k(i,l)==1)kk(i,l)='X'
 	if(k(i,l)==9)kk(i,l)='.'
-   16 enddo
-      return
-      end
+   16   enddo
+        return
+        end
