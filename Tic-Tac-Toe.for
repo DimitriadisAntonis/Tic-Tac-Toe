@@ -5,7 +5,7 @@
 	kk='.'
 	kk(2,2)='X'
         b=1
-	write(*,*) '           ','Gia ton pinaka'
+	write(*,*) '           ','For the array'
 	write(*,*)
 	write(*,*)'            1.','   2.','  3.'
 	do 3 c=1,3
@@ -15,7 +15,7 @@
         k=9
 	k(2,2)=1
         do 5 d=1,4
-	write(*,*) 'Dose i,l tou k(i,l)'
+	write(*,*) 'Give i,l for k(i,l)'
 	write(*,15) 
    15	format('i=',$)
       read(*,*) n
@@ -103,7 +103,7 @@
     8	enddo
       endif
 
-      !Ελεγχος για 0,0
+      
     1 if(b==1)then
 	do 2 i=1,3
 	if(k(i,1)==0.and.k(i,2)==0.and.k(i,3)==9) then 
@@ -169,9 +169,7 @@
     2	enddo
       endif
 
-      !Ελεγχος για n,m
 
-      !Ελεγχος για 9
       if(b==1) then
 	do 9 i=1,3
 	do 9 l=1,3
@@ -184,7 +182,7 @@
       endif
    10 b=1
       call characterr()
-      write(*,*) '                 ','O pinakas einai'
+      write(*,*) '                 ','The array is'
 	write(*,*)
 	write(*,*)'             1.','         2.','        3.'
 	write(*,*)
@@ -193,41 +191,41 @@
 	write(*,*)
 	write(*,*)
     4	enddo
-      !Ελεγχος για νικες
+
       do 12 i=1,3
       if(k(i,1)==k(i,2).and.k(i,2)==k(i,3).and.k(i,3)==0) then
-      write(*,*) 'Nikises'
+      write(*,*) 'You won!'
 	goto 13
 	endif
 	if(k(1,i)==k(2,i).and.k(2,i)==k(3,i).and.k(3,i)==0)then
-      write(*,*) 'Nikises'
+      write(*,*) 'You won!'
 	goto 13
 	endif
 	if(k(1,1)==k(2,2).and.k(2,2)==k(3,3).and.k(3,3)==0)then
-      write(*,*) 'Nikises'
+      write(*,*) 'You won!'
 	goto 13
 	endif
 	if(k(1,3)==k(2,2).and.k(2,2)==k(3,1).and.k(3,1)==0)then
-      write(*,*) 'Nikises'
+      write(*,*) 'You won!'
 	goto 13
 	endif
    12	enddo
 
       do 14 i=1,3
       if(k(i,1)==k(i,2).and.k(i,2)==k(i,3).and.k(i,3)==1) then
-      write(*,*) 'Nikisa'
+      write(*,*) 'I won!'
 	goto 13
 	endif
 	if(k(1,i)==k(2,i).and.k(2,i)==k(3,i).and.k(3,i)==1)then
-      write(*,*) 'Nikisa'
+      write(*,*) 'I won!'
 	goto 13
 	endif
 	if(k(1,1)==k(2,2).and.k(2,2)==k(3,3).and.k(3,3)==1)then
-      write(*,*) 'Nikisa'
+      write(*,*) 'I won!'
 	goto 13
 	endif
 	if(k(1,3)==k(2,2).and.k(2,2)==k(3,1).and.k(3,1)==1)then
-      write(*,*) 'Nikisa'
+      write(*,*) 'I won!'
 	goto 13
 	endif
    14	enddo
